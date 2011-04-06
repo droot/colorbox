@@ -49,14 +49,13 @@
     };
     ColorInputView.prototype.events = {
       'keyup #color-input': "updateColor",
-      'keyup #height-input': "updateColor",
       'keyup #width-input': "updateColor"
     };
     ColorInputView.prototype.updateColor = function(e) {
       return this.model.set({
         'color': $('#color-input').val(),
         'width': $('#width-input').val(),
-        'height': $('#height-input').val()
+        'height': $('#width-input').val()
       });
     };
     return ColorInputView;
