@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<title>CoffeeScript Example</title>
+	<title>CoffeeScript|Backbone.js Example|Tutorial</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" />
 	<script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"></script>
@@ -13,28 +13,24 @@
     </head>
 
     <script type="text/x-jquery-tmpl" id="color-box-template">
-	<div id="color-box" style="margin: 20px; float: left;height:${height}px; width: ${width}px; background-color: ${color}; border: 2px solid;">
+	<div id="color-box" style="margin: 20px; float: left;height:${width}px; width: ${width}px; background-color: ${color}; border: 2px solid;">
 	</div>
     </script>
 
     <body>
 	<div data-role="page" data-theme="b">
 	    <div data-role="header">
-		<h1>CoffeeScript Example</h1>
+		<h1>CoffeeScript + Backbone.js Example</h1>
 	    </div>
 	
 	    <div data-role="content" data-theme="d" class="container_12">
 		<div id="color-input-box" style="padding: 20px;">
 		   <div data-role="fieldcontain">
-			<label for="text" value="Enter a color value">Enter a Color Value (ex. red, green)</label>
+			<label for="text" >Enter Color Value (ex. red, green) :</label>
 			<input id="color-input" type="text" value="blue"> </input>
 		    </div>
 		   <div data-role="fieldcontain">
-			<label for="text" value="Enter a color value">Enter Height(ex. 100)</label>
-			<input id="height-input" type="text" value="100"> </input>
-		    </div>
-		   <div data-role="fieldcontain">
-			<label for="text" value="Enter a color value">Enter Width(ex. 50)</label>
+			<label for="text" >Enter Width of the box (ex. 50, 70) :</label>
 			<input id="width-input" type="text" value="100"> </input>
 		    </div>
 		</div>
