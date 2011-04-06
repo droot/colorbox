@@ -1,5 +1,5 @@
 (function() {
-  var ColorBoxController, ColorBoxModel, ColorBoxView, ColorInputView, init;
+  var ColorBoxController, ColorBoxView, ConfigInputView, ConfigModel, init;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
@@ -8,19 +8,19 @@
     child.__super__ = parent.prototype;
     return child;
   }, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-  ColorBoxModel = (function() {
-    function ColorBoxModel() {
-      ColorBoxModel.__super__.constructor.apply(this, arguments);
+  ConfigModel = (function() {
+    function ConfigModel() {
+      ConfigModel.__super__.constructor.apply(this, arguments);
     }
-    __extends(ColorBoxModel, Backbone.Model);
-    ColorBoxModel.prototype.initialize = function() {
+    __extends(ConfigModel, Backbone.Model);
+    ConfigModel.prototype.initialize = function() {
       return this.set({
         'color': 'blue',
         'width': '100',
         'height': '100'
       });
     };
-    return ColorBoxModel;
+    return ConfigModel;
   })();
   ColorBoxView = (function() {
     function ColorBoxView() {
@@ -39,26 +39,26 @@
     };
     return ColorBoxView;
   })();
-  ColorInputView = (function() {
-    function ColorInputView() {
-      this.updateColor = __bind(this.updateColor, this);;      ColorInputView.__super__.constructor.apply(this, arguments);
+  ConfigInputView = (function() {
+    function ConfigInputView() {
+      this.updateConfig = __bind(this.updateConfig, this);;      ConfigInputView.__super__.constructor.apply(this, arguments);
     }
-    __extends(ColorInputView, Backbone.View);
-    ColorInputView.prototype.initialize = function() {
+    __extends(ConfigInputView, Backbone.View);
+    ConfigInputView.prototype.initialize = function() {
       return this.model.view = this;
     };
-    ColorInputView.prototype.events = {
-      'keyup #color-input': "updateColor",
-      'keyup #width-input': "updateColor"
+    ConfigInputView.prototype.events = {
+      'keyup #color-input': "updateConfig",
+      'keyup #width-input': "updateConfig"
     };
-    ColorInputView.prototype.updateColor = function(e) {
+    ConfigInputView.prototype.updateConfig = function(e) {
       return this.model.set({
         'color': $('#color-input').val(),
         'width': $('#width-input').val(),
         'height': $('#width-input').val()
       });
     };
-    return ColorInputView;
+    return ConfigInputView;
   })();
   ColorBoxController = (function() {
     function ColorBoxController() {
@@ -67,9 +67,9 @@
     __extends(ColorBoxController, Backbone.Controller);
     ColorBoxController.prototype.initialize = function() {
       var color_input, model, view, x, _results;
-      model = new ColorBoxModel;
-      color_input = new ColorInputView({
-        'el': $('#color-input-box'),
+      model = new ConfigModel;
+      color_input = new ConfigInputView({
+        'el': $('#config-input'),
         'model': model
       });
       _results = [];
